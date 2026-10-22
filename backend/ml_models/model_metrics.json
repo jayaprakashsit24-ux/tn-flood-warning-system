@@ -1,0 +1,170 @@
+{
+  "model_name": "Random Forest Hydrological Ensemble (TN Basins)",
+  "version": "RF-v1.0.0",
+  "trained_at": "2026-10-22T10:15:40.975586",
+  "train_records": 11985,
+  "test_records": 2997,
+  "train_period": "2021-01-01 to 2025-08-15",
+  "test_period": "2025-08-15 to 2026-09-29",
+  "accuracy": 0.9763,
+  "precision_weighted": 0.9765,
+  "recall_weighted": 0.9763,
+  "f1_weighted": 0.9764,
+  "classes": [
+    "Low",
+    "Moderate",
+    "High",
+    "Critical"
+  ],
+  "classification_report": {
+    "Low": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 109.0
+    },
+    "Moderate": {
+      "precision": 0.9834920634920635,
+      "recall": 0.9779040404040404,
+      "f1-score": 0.9806900918012029,
+      "support": 1584.0
+    },
+    "High": {
+      "precision": 0.7299270072992701,
+      "recall": 0.746268656716418,
+      "f1-score": 0.7380073800738007,
+      "support": 134.0
+    },
+    "Critical": {
+      "precision": 0.9931972789115646,
+      "recall": 0.9982905982905983,
+      "f1-score": 0.9957374254049446,
+      "support": 1170.0
+    },
+    "accuracy": 0.9763096429763096,
+    "macro avg": {
+      "precision": 0.9266540874257245,
+      "recall": 0.9306158238527642,
+      "f1-score": 0.9286087243199871,
+      "support": 2997.0
+    },
+    "weighted avg": {
+      "precision": 0.9765440319906777,
+      "recall": 0.9763096429763096,
+      "f1-score": 0.9764160433989924,
+      "support": 2997.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      109,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1549,
+      35,
+      0
+    ],
+    [
+      0,
+      26,
+      100,
+      8
+    ],
+    [
+      0,
+      0,
+      2,
+      1168
+    ]
+  ],
+  "regressor_mae": 0.1555,
+  "regressor_rmse": 0.2245,
+  "regressor_r2": 1.0,
+  "feature_importance": [
+    {
+      "feature": "water_level_to_warning_ratio",
+      "label": "Level to Warning Level Ratio",
+      "importance": 0.1887
+    },
+    {
+      "feature": "water_level_to_danger_ratio",
+      "label": "Level to Danger Level Ratio",
+      "importance": 0.1811
+    },
+    {
+      "feature": "rainfall_24h_mm",
+      "label": "24-Hour Rainfall (mm)",
+      "importance": 0.1152
+    },
+    {
+      "feature": "rainfall_72h_mm",
+      "label": "72-Hour Cumulative Rainfall (mm)",
+      "importance": 0.0793
+    },
+    {
+      "feature": "rainfall_12h_mm",
+      "label": "12-Hour Rainfall (mm)",
+      "importance": 0.0755
+    },
+    {
+      "feature": "rainfall_6h_mm",
+      "label": "6-Hour Rainfall (mm)",
+      "importance": 0.0745
+    },
+    {
+      "feature": "upstream_water_level_m",
+      "label": "Upstream Gauge Level (m)",
+      "importance": 0.0483
+    },
+    {
+      "feature": "forecast_rainfall_24h_mm",
+      "label": "IMD 24h Rainfall Forecast (mm)",
+      "importance": 0.045
+    },
+    {
+      "feature": "soil_moisture_pct",
+      "label": "Catchment Soil Moisture (%)",
+      "importance": 0.0424
+    },
+    {
+      "feature": "rate_of_change_m_hr",
+      "label": "River Gauge Rise Rate (m/hr)",
+      "importance": 0.0386
+    },
+    {
+      "feature": "current_water_level_m",
+      "label": "Current River Level (m)",
+      "importance": 0.0376
+    },
+    {
+      "feature": "humidity_pct",
+      "label": "Atmospheric Humidity (%)",
+      "importance": 0.0213
+    },
+    {
+      "feature": "rainfall_3h_mm",
+      "label": "3-Hour Rainfall (mm)",
+      "importance": 0.0191
+    },
+    {
+      "feature": "rainfall_1h_mm",
+      "label": "1-Hour Rainfall (mm)",
+      "importance": 0.0179
+    },
+    {
+      "feature": "reservoir_discharge_cusecs",
+      "label": "Reservoir Inflow/Discharge (cusecs)",
+      "importance": 0.0093
+    },
+    {
+      "feature": "temperature_c",
+      "label": "Ambient Temperature (\u00b0C)",
+      "importance": 0.0063
+    }
+  ],
+  "is_active": true
+}
