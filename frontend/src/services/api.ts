@@ -33,7 +33,7 @@ export const api = {
   },
 
   async getStations(params?: { basin_id?: number; district?: string; risk_level?: string }): Promise<MonitoringStation[]> {
-    const url = new URL(`${window.location.origin}${API_BASE}/stations`);
+    const url = new URL(`${API_BASE}/stations`);
     if (params?.basin_id) url.searchParams.append('basin_id', params.basin_id.toString());
     if (params?.district) url.searchParams.append('district', params.district);
     if (params?.risk_level) url.searchParams.append('risk_level', params.risk_level);
@@ -63,7 +63,7 @@ export const api = {
   },
 
   async getPredictions(stationId?: number): Promise<PredictionHistory[]> {
-    const url = new URL(`${window.location.origin}${API_BASE}/predictions`);
+    const url = new URL(`${API_BASE}/predictions`);
     if (stationId) url.searchParams.append('station_id', stationId.toString());
     const res = await fetch(url.toString());
     if (!res.ok) throw new Error('Failed to load predictions');
@@ -71,7 +71,7 @@ export const api = {
   },
 
   async getAlerts(params?: { status?: string; risk_level?: string }): Promise<AlertItem[]> {
-    const url = new URL(`${window.location.origin}${API_BASE}/alerts`);
+    const url = new URL(`${API_BASE}/alerts`);
     if (params?.status) url.searchParams.append('status', params.status);
     if (params?.risk_level) url.searchParams.append('risk_level', params.risk_level);
     const res = await fetch(url.toString());
