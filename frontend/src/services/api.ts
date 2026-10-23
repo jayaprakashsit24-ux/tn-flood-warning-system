@@ -11,7 +11,7 @@ import {
   PredictionRequestPayload,
 } from '../types';
 
-const API_BASE = '/api';
+const API_BASE = 'https://tn-flood-warning-system.onrender.com/api';
 
 export const api = {
   async getHealth() {
